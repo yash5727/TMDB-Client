@@ -17,8 +17,10 @@ import com.example.tmdbclient.domain.repository.MovieRepository
 import com.example.tmdbclient.domain.repository.TvShowRepository
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
-
+@InstallIn(SingletonComponent::class)
 @Module
 class RepositoryModule {
 

@@ -9,10 +9,10 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tmdbclient.R
 import com.example.tmdbclient.databinding.FragmentMovieBinding
-import com.example.tmdbclient.presentation.di.Injector
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-
+@AndroidEntryPoint
 class MovieFragment : Fragment() {
     @Inject
     lateinit var factory: MovieViewModelFactory
@@ -24,9 +24,6 @@ class MovieFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentMovieBinding.inflate(inflater)
-
-        (activity?.application as Injector).createMovieSubComponent()
-            .inject(this)
 
         movieViewModel = ViewModelProvider(this,factory)[MovieViewModel::class.java]
 

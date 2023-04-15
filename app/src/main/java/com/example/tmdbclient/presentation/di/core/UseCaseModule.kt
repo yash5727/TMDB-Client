@@ -6,7 +6,10 @@ import com.example.tmdbclient.domain.repository.TvShowRepository
 import com.example.tmdbclient.domain.useCase.*
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
+@InstallIn(SingletonComponent::class)
 @Module
 class UseCaseModule {
 
